@@ -216,6 +216,11 @@ p {
   padding: 80px 0;
 }
 
+#media.section {
+  padding-top: 50px;
+  padding-bottom: 40px;
+}
+
 .section-alt {
   background-color: var(--bg-light);
 }
@@ -377,53 +382,6 @@ p {
   color: var(--text-light);
 }
 
-/* Media Section */
-.media-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
-  margin-top: 3rem;
-}
-
-.media-item {
-  background: var(--bg-white);
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: var(--shadow-md);
-  transition: var(--transition);
-}
-
-.media-item:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-lg);
-}
-
-.video-container {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
-}
-
-.video-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-.media-placeholder {
-  aspect-ratio: 16/9;
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--bg-white);
-  font-size: 1.2rem;
-  font-weight: 600;
-}
 
 /* Contact Section */
 .contact-list {
@@ -490,6 +448,41 @@ p {
   cursor: pointer;
   transition: var(--transition);
 }
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Make each card stack title + video nicely */
+.media-item {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Small, subtle headers above each video */
+.video-title {
+  margin: 0 0 0.4rem;
+  font-size: 0.95rem;       /* smaller than normal section headings */
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: var(--text-light); /* or a hex like #666 if you prefer */
+}
+
+/* Ensure the video keeps its shape */
+.video-container iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;     /* keeps nice proportions */
+  border-radius: 8px;       /* optional: makes it feel more modern */
+}
+
+.short-video iframe {
+  aspect-ratio: 9 / 16;
+}
+
 
 .contact-form button:hover:not(:disabled) {
   background-color: var(--secondary-color);
