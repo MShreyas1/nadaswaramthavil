@@ -5,6 +5,18 @@
   <title>Nadaswaram & Thavil for Weddings | NadaswaramThavil.com</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Traditional Nadaswaram and Thavil music for South Indian weddings, temple functions, and auspicious ceremonies." />
+
+  <!-- Open Graph / social sharing thumbnail -->
+  <meta property="og:title" content="Nadaswaram & Thavil for Weddings" />
+  <meta property="og:description" content="Authentic Mangala Vadyam for weddings, temple functions, and auspicious ceremonies." />
+  <meta property="og:image" content="images/Logo.png" />
+  <meta property="og:type" content="website" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Nadaswaram & Thavil for Weddings" />
+  <meta name="twitter:description" content="Authentic Mangala Vadyam for weddings, temple functions, and auspicious ceremonies." />
+  <meta name="twitter:image" content="images/Logo.png" />
+
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -12,7 +24,12 @@
     <div class="hero-overlay">
       <nav class="navbar">
         <div class="container">
-          <div class="logo">Nadaswaram & Thavil</div>
+          <div class="logo">
+            <div class="logo-inner">
+              <img src="images/Logo.png" alt="Nadaswaram & Thavil logo" />
+              <span>Nadaswaram & Thavil</span>
+            </div>
+          </div>
           <div class="nav-links">
             <a href="index.html" class="active">Home</a>
             <a href="about.html">About</a>
@@ -28,7 +45,7 @@
         </div>
       </nav>
       <div class="hero-content">
-        <h1>Traditional Managala Vadyam</h1>
+        <h1>Traditional Mangala Vadyam</h1>
         <p>Authentic Mangala Vadyam for weddings, temple functions, and auspicious ceremonies.</p>
         <a href="#contact" class="btn-primary">Book a Performance</a>
       </div>
@@ -78,7 +95,7 @@
         <h2>Contact & Booking</h2>
         <p>For bookings and inquiries, please contact:</p>
         <ul class="contact-list">
-          <li><strong>Phone / WhatsApp:</strong> <span>+1-8653861995</span></li>
+          <li><strong>Phone / WhatsApp:</strong> <span>+1 (865)386-1995</span></li>
           <li><strong>Email:</strong> <span>shreyasmuralidharan@gmail.com</span></li>
           <li><strong>Location:</strong> United States</li>
         </ul>
@@ -89,8 +106,11 @@
 
 
   <script>
-    // Set current year
-    document.getElementById("year").textContent = new Date().getFullYear();
+    // Set current year (only if footer span exists)
+    const yearSpan = document.getElementById("year");
+    if (yearSpan) {
+      yearSpan.textContent = new Date().getFullYear();
+    }
 
     // Navbar scroll effect
     window.addEventListener('scroll', function() {

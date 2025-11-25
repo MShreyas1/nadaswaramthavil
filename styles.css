@@ -128,6 +128,18 @@ p {
   letter-spacing: -0.01em;
 }
 
+.logo-inner {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-inner img {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
 .navbar.scrolled .logo {
   color: var(--secondary-color);
 }
