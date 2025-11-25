@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Media | Nadaswaram & Thavil Performances & Photos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Watch Nadaswaram and Thavil performances and view photos from events and ceremonies." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero" id="media-hero">
+    <div class="hero-overlay">
+      <nav class="navbar">
+        <div class="container">
+          <div class="logo">Nadaswaram & Thavil</div>
+          <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="media.html" class="active">Media</a>
+            <a href="index.html#team">Team</a>
+            <a href="index.html#contact">Contact</a>
+          </div>
+          <div class="mobile-menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </nav>
+      <div class="hero-content">
+        <h1>Videos & Photos</h1>
+        <p>Sample our performances and see moments from past events.</p>
+        <a href="#videos" class="btn-primary">Watch Performances</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="videos" class="section">
+      <div class="container">
+        <h2>Videos</h2>
+        <div class="media-grid">
+          <div class="media-item">
+            <div class="video-container">
+              <h4 class="video-title">Vachindamma</h4>
+              <iframe 
+                src="https://www.youtube.com/embed/VMscS2dnmGk" 
+                title="Nadaswaram & Thavil Performance"
+                frameborder="0" 
+                referrerpolicy="strict-origin-when-cross-origin"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+
+          <div class="media-item">
+            <div class="video-container">
+              <h4 class="video-title">Vaathapi Ganapathim</h4>
+              <iframe 
+                src="https://www.youtube.com/embed/pIyQ3BO_sPE" 
+                title="Nadaswaram Short Performance"
+                frameborder="0" 
+                referrerpolicy="strict-origin-when-cross-origin"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+
+          <div class="media-item">
+            <div class="video-container">
+              <h4 class="video-title">One of our favorite nadaswaram recordings</h4>
+              <iframe 
+                src="https://www.youtube.com/embed/RwUEf0nW7dw" 
+                title="Favorite Nadaswaram Recording"
+                frameborder="0" 
+                referrerpolicy="strict-origin-when-cross-origin"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="photos" class="section section-alt">
+      <div class="container">
+        <h2>Photos</h2>
+        <div class="photo-grid">
+          <div class="photo-item">
+            <img src="images/6c3f1d17-d0be-456f-ae42-ee61c47deb0e.JPG" alt="Nadaswaram & Thavil performance" />
+          </div>
+          <div class="photo-item">
+            <img src="images/9a58cbe8-7f35-4794-b73c-fbd0986004ab.JPG" alt="Nadaswaram & Thavil performance" />
+          </div>
+          <div class="photo-item">
+            <img src="images/e4fc78b1-f820-478b-89bd-fc4aa1370054.JPG" alt="Nadaswaram & Thavil performance" />
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© <span id="year"></span> NadaswaramThavil.com · Traditional Mangala Isai</p>
+    </div>
+  </footer>
+
+  <!-- Lightbox overlay for enlarged photos -->
+  <div class="lightbox-overlay hidden" id="lightbox">
+    <div class="lightbox-image-wrapper">
+      <img src="" alt="Enlarged media" id="lightbox-img" />
+    </div>
+  </div>
+
+  <script>
+    // Set current year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Mobile menu toggle
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    mobileMenuToggle.addEventListener('click', function() {
+      navLinks.classList.toggle('active');
+      mobileMenuToggle.classList.toggle('active');
+    });
+
+    // Close mobile menu when clicking on a link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        mobileMenuToggle.classList.remove('active');
+      });
+    });
+
+    // Simple lightbox for photo grid
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    document.querySelectorAll('.photo-grid .photo-item img').forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightbox.classList.remove('hidden');
+      });
+    });
+
+    // Close lightbox on click anywhere
+    lightbox.addEventListener('click', () => {
+      lightbox.classList.add('hidden');
+      lightboxImg.src = '';
+    });
+  </script>
+</body>
+</html>
