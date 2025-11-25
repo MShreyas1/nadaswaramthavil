@@ -285,6 +285,37 @@ p {
   color: var(--text-light);
 }
 
+.instrument-card .video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: var(--shadow-md);
+}
+
+.instrument-card .video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 15px;
+}
+
+/* YouTube Shorts - Vertical Video Styling */
+.short-video {
+  padding-bottom: 177.78%; /* 9:16 aspect ratio */
+  max-width: 315px; /* Standard Shorts width */
+  margin: 0 auto;
+}
+
+.short-video iframe {
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
 /* Team Section */
 .team-grid {
   display: grid;
